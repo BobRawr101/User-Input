@@ -27,12 +27,27 @@ int main(void)
 			{
 				printf("Enter Unit of Measurement: 1. Fahreneheit 2. Celsius or 3. Kelvin \n");
 				scanf_s("%20s", tempchoice, 20);
+				
 				if (strcmp(tempchoice, "Fahrenheit") == 0)
 				{
 					printf("Enter degrees Fahrenheit: "); // prompt user to enter temperature
 					scanf("%g", &temp); // variable 
 					printf("%g in Fahrenheit is %.3g in Celsius and %.3g in Kelvin \n", temp, (temp - 32) * 5 / 9, ((temp - 32) * 5 / 9) + 273); // output in Celsius and Kelvin
 				} 
+
+				if (strcmp(tempchoice, "Celsius") == 0)
+				{
+					printf("Enter degrees Celsius: "); // prompt user to enter temperature
+					scanf("%g", &temp); // variable 
+					printf("%g in Celsius is %.3g in Fahrenheit and %.3g in Kelvin \n", temp, ((9 * temp / 5) + 32), temp + 273); // output in Celsius and Kelvin
+				}
+
+				if (strcmp(tempchoice, "Kelvin") == 0)
+				{
+					printf("Enter degrees Kelvin: "); // prompt user to enter temperature
+					scanf("%g", &temp); // variable 
+					printf("%g in Kelvin is %.3g in Fahrenheit and %.3g in Celsius \n", temp, ((temp - 273) + 32) * 5 / 9, (temp - 273)); // output in Celsius and Kelvin
+				}
 
 			}
 
